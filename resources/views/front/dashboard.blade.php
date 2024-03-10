@@ -34,7 +34,7 @@
                             </p>
                         </div>
                         <div class="text-center mt-5 mb-3">
-                            <a href="{{ route('front.products.index') }}"
+                            <a href="{{ route('front.categories.index') }}"
                                 class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Tüm
                                 kategoriler</a>
                         </div>
@@ -47,7 +47,7 @@
                             </p>
                         </div>
                         <div class="text-center mt-5 mb-3">
-                            <a href="{{ route('front.products.index') }}"
+                            <a href="{{ route('front.marketplaces.index') }}"
                                 class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Tüm
                                 marketplaceler</a>
                         </div>
@@ -60,7 +60,7 @@
                             </p>
                         </div>
                         <div class="text-center mt-5 mb-3">
-                            <a href="{{ route('front.products.index') }}"
+                            <a href="{{ route('front.stores.index') }}"
                                 class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Tüm
                                 storelar</a>
                         </div>

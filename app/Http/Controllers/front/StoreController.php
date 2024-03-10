@@ -11,6 +11,6 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Stores::all();
-        return view('front.store.index', compact('stores'));
+        return view('front.stores.index', compact('stores'));
     }
 }

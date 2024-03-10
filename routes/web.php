@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\ProductsController;
 use App\Http\Controllers\front\DashboardController;
 use App\Http\Controllers\front\MarketplacesController;
+use App\Http\Controllers\front\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,5 @@ Route::name('front.')->group(function () {
     Route::get('/products/{slug}', [ProductsController::class, 'show'])->name('products.show');
     Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
     Route::get('/marketplaces', [MarketplacesController::class, 'index'])->name('marketplaces.index');
+    Route::get('/stores', [StoreController::class, 'index'])->name('stores.index');
 });
