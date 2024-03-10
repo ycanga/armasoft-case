@@ -12,6 +12,8 @@
                 </li>
                 <li>
                     php artisan migrate --force
+                </li>
+                <li>
                     php artisan migrate:fresh --force
                 </li>
                 <li>
