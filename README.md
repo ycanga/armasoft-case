@@ -2,7 +2,7 @@
 <p>
     <ul>
         <li>
-            Proje dosyaları içerisinde yer alan <b>run_project.sh</b> isimli dosyayı çalıştırarak tüm projenin otomatik ayağa kalkmasını sağlayabilirsiniz.
+            Proje dosyaları içerisinde yer alan <b>run_project.sh</b> isimli dosyayı çalıştırarak tüm projenin otomatik ayağa kalkmasını sağlayabilirsiniz. (Kurulum sırasında bilgisayar parolası istenebilir.)
         </li>
         <li>
             Manuel olarak çalıştırmak için sırasıyla aşağıdaki komutları çalıştırmanız yeterli olacaktır.
