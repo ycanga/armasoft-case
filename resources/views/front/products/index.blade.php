@@ -1,10 +1,14 @@
 @extends('layouts.app')
 @section('title', 'Products')
-
+@section('head-text')
+<h1 class="font-bold text-xl border-b-2 border-dashed p-1 text-center">
+    Tüm Ürünler
+</h1>
+@endsection
 @section('content')
     <div class="p-4 sm:ml-64">
         <div
-            class="pl-20 pr-20 pb-5 pt-5 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-10 flex justify-center">
+            class="pl-20 pr-20 pb-5 pt-5 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-5 flex justify-center">
             <table class="table-auto border" id="product-table">
                 <thead>
                     <tr>

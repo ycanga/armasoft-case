@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\ProductsController;
 use App\Models\Products;
+use App\Http\Controllers\front\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::name('front.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
     Route::get('/products/{slug}', [ProductsController::class, 'show'])->name('products.show');
 });

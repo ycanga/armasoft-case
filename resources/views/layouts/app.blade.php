@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="text-center mt-5 text-xl">
+        @yield('head-text')
+    </div>
     <!-- Include header -->
     @include('layouts.header')
 
