@@ -5,7 +5,7 @@
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
-run_project.sh -rwxr-xr-x
+run_project.sh -rwxrwxrwx
 
 /.github export-ignore
 CHANGELOG.md export-ignore

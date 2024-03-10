@@ -12,8 +12,9 @@ fi
 
 # Migration işlemi
 echo "Veritabanı tabloları oluşturuluyor..."
-php artisan migrate --no-interaction
+php artisan migrate --force
 if [ $? -eq 0 ]; then
+    php artisan migrate:fresh --force
     echo "Veritabanı tabloları başarıyla oluşturuldu."
 else
     echo "Veritabanı tabloları oluşturma işlemi sırasında bir hata oluştu."
@@ -32,7 +33,7 @@ fi
 
 # npm paketlerinin yüklenmesi
 echo "NPM paketleri yükleniyor..."
-npm i
+sudo npm i
 if [ $? -eq 0 ]; then
     echo "NPM paketleri başarıyla yüklendi."
 else
