@@ -140,16 +140,6 @@ class FetchProductsController extends Controller
                         'symbol' => $product['currency_smybol'],
                     ]);
 
-                    $marketplaceDetails = MarketplaceDetails::updateOrCreate([
-                        'marketplace_category' => $product['marketplace_category'],
-                        'marketplace_qty' => $product['marketplace_qty_value'],
-                        'marketplace_price' => $product['marketplace_price_value'],
-                        'marketplace_sale_price' => $product['marketplace_sale_price_value'],
-                        'marketplace_listing_number' => $product['marketplace_listing_number'],
-                        'marketplace_handling' => $product['marketplace_handling'],
-                        'marketplace_status' => $product['marketplace_status'],
-                    ]);
-
                     $productData = Products::updateOrCreate(
                         [
                             'id' => $product['product_id'],
@@ -159,14 +149,6 @@ class FetchProductsController extends Controller
                             'sku' => $product['sku'],
                             'store_id' => $product['store_id'],
                             'marketplace_id' => $product['marketplace_id'],
-                            'marketplace_details_id' => $marketplaceDetails->id,
-                            // 'marketplace_category' => $product['marketplace_category'],
-                            // 'marketplace_qty' => $product['marketplace_qty_value'],
-                            // 'marketplace_price' => $product['marketplace_price_value'],
-                            // 'marketplace_sale_price' => $product['marketplace_sale_price_value'],
-                            // 'marketplace_listing_number' => $product['marketplace_listing_number'],
-                            // 'marketplace_status' => $product['marketplace_status'],
-                            // 'marketplace_handling' => $product['marketplace_handling'],
                             'has_offers' => $product['has_offers'],
                             'is_linked' => $product['is_linked'],
                             'is_on_sale' => $product['is_on_sale'],
@@ -176,6 +158,17 @@ class FetchProductsController extends Controller
                             'currency' => $currency->id,
                         ],
                     );
+
+                    $marketplaceDetails = MarketplaceDetails::updateOrCreate([
+                        'product_id' => $productData->id,
+                        'marketplace_category' => $product['marketplace_category'],
+                        'marketplace_qty' => $product['marketplace_qty_value'],
+                        'marketplace_price' => $product['marketplace_price_value'],
+                        'marketplace_sale_price' => $product['marketplace_sale_price_value'],
+                        'marketplace_listing_number' => $product['marketplace_listing_number'],
+                        'marketplace_handling' => $product['marketplace_handling'],
+                        'marketplace_status' => $product['marketplace_status'],
+                    ]);
 
 
                     $productID = $productData->id;

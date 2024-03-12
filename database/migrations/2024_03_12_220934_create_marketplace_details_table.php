@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('marketplace_details', function (Blueprint $table) {
             $table->id();
+            $table->string('product_id')->nullable();
             $table->string('marketplace_category')->nullable();
             $table->string('marketplace_qty')->nullable();
             $table->string('marketplace_price')->nullable();
@@ -22,10 +23,6 @@ return new class extends Migration
             $table->string('marketplace_status')->nullable();
             $table->timestamps();
         });
-
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('marketplace_details_id')->nullable()->after('marketplace_id');
-        });
     }
 
     /**
@@ -34,8 +31,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('marketplace_details');
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('marketplace_details_id');
-        });
     }
 };

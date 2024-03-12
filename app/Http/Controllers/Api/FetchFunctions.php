@@ -98,14 +98,4 @@ class FetchFunctions extends Controller
             }
         }
     }
-
-    // public function fetchCurrencies($allData)
-    // {
-    //     foreach ($allData as $currency) {
-    //         $selectedCurrencies[] = Currencies::updateOrCreate([
-    //             'currency' => $currency['currency'],
-    //             'symbol' => $currency['currency_smybol'],
-    //         ]);
-    //     }
-    // }
 }

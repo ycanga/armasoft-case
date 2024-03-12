@@ -10,6 +10,7 @@ class MarketplaceDetails extends Model
     use HasFactory;
 
     protected $fillable = [
+        'product_id',
         'marketplace_category',
         'marketplace_qty',
         'marketplace_price',

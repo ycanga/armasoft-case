@@ -14,7 +14,7 @@ class ProductsController extends Controller
         $products = DB::table('products')
             ->leftJoin('product_images', 'products.id', '=', 'product_images.product_id')
             ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
-            ->join('marketplace_details', 'products.marketplace_details_id', '=', 'marketplace_details.id')
+            ->join('marketplace_details', 'products.id', '=', 'marketplace_details.product_id')
             ->join('currencies', 'products.currency', '=', 'currencies.id')
             ->select('products.*', 'product_images.image_url', 'categories.name as category_name', 'currencies.symbol as currency_symbol', 'marketplace_details.marketplace_category', 'marketplace_details.marketplace_qty', 'marketplace_details.marketplace_price', 'marketplace_details.marketplace_sale_price', 'marketplace_details.marketplace_listing_number', 'marketplace_details.marketplace_handling', 'marketplace_details.marketplace_status')
             ->get();
@@ -29,7 +29,7 @@ class ProductsController extends Controller
             ->join('categories', 'products.category_id', '=', 'categories.id')
             ->join('stores', 'products.store_id', '=', 'stores.id')
             ->join('marketplaces', 'products.marketplace_id', '=', 'marketplaces.id')
-            ->join('marketplace_details', 'products.marketplace_details_id', '=', 'marketplace_details.id')
+            ->join('marketplace_details', 'products.id', '=', 'marketplace_details.product_id')
             ->leftJoin('issues', 'products.id', '=', 'issues.product_id')
             ->join('product_listings', 'products.id', '=', 'product_listings.product_id')
             ->join('currencies', 'products.currency', '=', 'currencies.id')
