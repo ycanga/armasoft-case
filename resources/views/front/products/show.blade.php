@@ -26,7 +26,7 @@
                         </ul>
 
                         <div class="flex mt-6 items-center pb-5 border-b-2 border-dashed border-gray-200 mb-5">
-                            <span class="title-font font-medium text-2xl text-lime-500">{{ $product->currency_smybol }}
+                            <span class="title-font font-medium text-2xl text-lime-500">{{ $product->currency_symbol }}
                                 {{ $product->marketplace_price ?? '---' }}</span>
                         </div>
                     </div>

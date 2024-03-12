@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id')->nullable()->index();
+            $table->string('product_id')->nullable()->index();
             $table->text('details')->nullable();
             $table->string('status')->nullable();
             $table->string('date')->nullable();
             $table->timestamps();
-
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

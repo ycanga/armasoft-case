@@ -22,14 +22,14 @@ else
 fi
 
 # Özel komut çalıştırma
-echo "Uygulama verileri çekiliyor..."
-php artisan app:fetch-data
-if [ $? -eq 0 ]; then
-    echo "Veri çekme işlemi başarıyla tamamlandı."
-else
-    echo "Veri çekme işlemi sırasında bir hata oluştu."
-    exit 1
-fi
+# echo "Uygulama verileri çekiliyor..."
+# php artisan app:fetch-data
+# if [ $? -eq 0 ]; then
+#     echo "Veri çekme işlemi başarıyla tamamlandı."
+# else
+#     echo "Veri çekme işlemi sırasında bir hata oluştu."
+#     exit 1
+# fi
 
 # npm paketlerinin yüklenmesi
 echo "NPM paketleri yükleniyor..."

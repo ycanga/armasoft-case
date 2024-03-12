@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_listings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id')->nullable()->index();
+            $table->string('product_id')->nullable()->index();
             $table->string('quantity')->nullable();
             $table->string('price')->nullable();
             $table->string('sale_price')->nullable();
@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string('f_channel')->nullable();
             $table->string('browse_node')->nullable();
             $table->timestamps();
-
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->id();
-            $table->string('product_id')->nullable()->index();
-            $table->boolean('type')->nullable()->default(0); // 0: note, 1: internal note
-            $table->text('note')->nullable();
+            $table->string('currency');
+            $table->string('symbol');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('currencies');
     }
 };
