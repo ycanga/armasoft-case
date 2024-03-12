@@ -11,6 +11,7 @@ class Products extends Model
 
     protected $guarded = [];
 
+    // Tüm relationlar devredışı bırakıldı.
     public function images()
     {
         return $this->hasMany(ProductImages::class, 'product_id', 'id');

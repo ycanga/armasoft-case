@@ -25,7 +25,7 @@
                     @foreach ($products as $product)
                         <tr class="p-3">
                             <td>
-                                <img src="{{ optional($product->images->first())->image_url }}" alt="{{ $product->name }}"
+                                <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
                                     class="w-20 h-20">
                             </td>
                             <td class="text-sm">
@@ -35,7 +35,7 @@
                                 {{ $product->name }}
                             </td>
                             <td>
-                                {{ optional($product->category->first())->name }}
+                                {{ $product->category_name }}
                             </td>
                             <td class="text-sm font-bold">
                                 {{ $product->asin }}
