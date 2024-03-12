@@ -12,8 +12,8 @@ class ProductsController extends Controller
     public function index()
     {
         $products = DB::table('products')
-            ->join('product_images', 'products.id', '=', 'product_images.product_id')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->leftJoin('product_images', 'products.id', '=', 'product_images.product_id')
+            ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
             ->join('marketplace_details', 'products.marketplace_details_id', '=', 'marketplace_details.id')
             ->join('currencies', 'products.currency', '=', 'currencies.id')
             ->select('products.*', 'product_images.image_url', 'categories.name as category_name', 'currencies.symbol as currency_symbol', 'marketplace_details.marketplace_category', 'marketplace_details.marketplace_qty', 'marketplace_details.marketplace_price', 'marketplace_details.marketplace_sale_price', 'marketplace_details.marketplace_listing_number', 'marketplace_details.marketplace_handling', 'marketplace_details.marketplace_status')
